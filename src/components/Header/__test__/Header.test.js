@@ -1,19 +1,20 @@
 import { render, screen } from "@testing-library/react";
 import Header from "../Header";
 
-it("should render same title passed into title prop", async () => {
-  render(<Header title="my title" />);
-  const headingElement = screen.getByText(/my title/i);
-  expect(headingElement).toBeInTheDocument();
-});
+describe("Header", () => {
+  it("should render same title passed into title prop", async () => {
+    render(<Header title="my title" />);
+    const headingElement = screen.getByText(/my title/i);
+    expect(headingElement).toBeInTheDocument();
+  });
 
-it("should render same title passed into title props", async () => {
-  render(<Header title="my title" />);
-  const headingElement = screen.getByRole("heading", {name: "my title"});
-  expect(headingElement).toBeInTheDocument();
-});
+  it("should render same title passed into title props", async () => {
+    render(<Header title="my title" />);
+    const headingElement = screen.getByRole("heading", { name: "my title" });
+    expect(headingElement).toBeInTheDocument();
+  });
 
-it("should render same title passed into title", async () => {
+  it("should render same title passed into title", async () => {
     render(<Header title="my title" />);
     const headingElement = screen.getByTitle("Header");
     expect(headingElement).toBeInTheDocument();
@@ -42,4 +43,4 @@ it("should render same title passed into title", async () => {
     const headingElements = screen.getAllByRole("heading");
     expect(headingElements.length).toBe(2);
   });
-
+});
