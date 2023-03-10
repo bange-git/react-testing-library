@@ -19,7 +19,7 @@ describe("Follower List", () => {
   it("should render all users", async () => {
     render(<MockFollersList />);
     const followerDivElements = await screen.findAllByTestId(/follower-item/i);
-    screen.debug(followerDivElements);
+    //screen.debug(followerDivElements);
     expect(followerDivElements.length).toBe(1);
   });
 });
