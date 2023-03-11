@@ -24,10 +24,8 @@ it("loads greetings on clik", async () => {
   //nameInput.value = "Mary";
   userEvent.type(nameInput, "Mary");
   userEvent.click(loadButton);
-  debug();
   //to avoid warnings and prevent some errors, we need to wait for the response.
   await waitFor(() =>
     expect(getByLabelText(/greeting/i)).toHaveTextContent(`Hello Mary`)
   );
-  debug();
 });
